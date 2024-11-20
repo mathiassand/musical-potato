@@ -1,3 +1,6 @@
+import hmi.graphicslibrary.TransparentPanel;
+import hmi.graphicslibrary.layouts.KeyValueLayout;
+
 import javax.swing.*;
 
 public class AppStarter {
@@ -9,6 +12,18 @@ public class AppStarter {
             frame.setLocationRelativeTo(null);
             frame.setVisible(true);
 
+            TransparentPanel panel = new TransparentPanel(new KeyValueLayout());
+            panel.add(new JLabel("Hello World!"));
+            panel.add(new JButton("Button"));
+            panel.add(new JLabel("Hello World!"));
+            panel.add(new JButton("Button"));
+            panel.add(new JLabel("Hello World!"));
+            panel.add(new JButton("Button"));
+            panel.add(new JLabel("Hello World!"));
+            panel.add(new JButton("Button"));
+            panel.add(new JLabel("Hello World!"));
+            panel.add(new JButton("Button"));
+            frame.setContentPane(panel);
         });
     }
 }
