@@ -1,0 +1,5 @@
+package app.PokemonPackSim.cards;
+
+public enum CardType {
+    FIGHTING, FIRE, WATER, LIGHTNING, GRASS, FAIRY, PSYCHIC, DARK, STEEL, ICE, NORMAL, COLORLESS, TRAINER, ENERGY
+}

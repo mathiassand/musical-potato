@@ -1,6 +1,7 @@
 import com.formdev.flatlaf.FlatDarculaLaf;
-import hmi.graphicslibrary.TransparentPanel;
-import hmi.graphicslibrary.layouts.KeyValueLayout;
+import hmi.pokemonpacksimulator.packopener.control.PokemonPackSimControl;
+import hmi.pokemonpacksimulator.packopener.model.PokemonPackSimModel;
+import hmi.pokemonpacksimulator.packopener.view.PokemonPackSimView;
 
 import javax.swing.*;
 
@@ -13,25 +14,18 @@ public class AppStarter {
         }
 
         SwingUtilities.invokeLater(() -> {
-            JFrame frame = new JFrame();
+            JFrame frame = new JFrame("Pokemon Pack Simulator");
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setSize(800, 600);
             frame.setLocationRelativeTo(null);
+
+            PokemonPackSimModel pokemonPackSimModel = new PokemonPackSimModel();
+
+            PokemonPackSimView pokemonPackSimView = new PokemonPackSimView();
+            PokemonPackSimControl pokemonPackSimControl = new PokemonPackSimControl(pokemonPackSimView, pokemonPackSimModel);
+
+            EDT.invokeOnEDT(() -> frame.setContentPane(pokemonPackSimView));
             frame.setVisible(true);
-            EDT.invokeOnEDT(() -> {
-                TransparentPanel panel = new TransparentPanel(new KeyValueLayout());
-                panel.add(new JLabel("Hello World!"));
-                panel.add(new JButton("Button"));
-                panel.add(new JLabel("Hello World!"));
-                panel.add(new JButton("Button"));
-                panel.add(new JLabel("Hello World!"));
-                panel.add(new JButton("Button"));
-                panel.add(new JLabel("Hello World!"));
-                panel.add(new JButton("Button"));
-                panel.add(new JLabel("Hello World!"));
-                panel.add(new JButton("Button"));
-                frame.setContentPane(panel);
-            });
         });
     }
 }

@@ -4,7 +4,7 @@ import java.awt.*;
 
 public class KeyValueLayout implements LayoutManager {
     private int hgap = 5;
-    private int vgap = 5;
+    private int vgap = 10;
     private int keyWidth = 100;
 
     public KeyValueLayout() {
