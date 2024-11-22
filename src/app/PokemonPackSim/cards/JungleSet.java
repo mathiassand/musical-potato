@@ -10,7 +10,8 @@ public class JungleSet {
         JUNGLE_CARDS.add(new PokemonCard("Clefable", CardType.NORMAL, RarityType.RARE_HOLO, true));
         JUNGLE_CARDS.add(new PokemonCard("Electrode", CardType.LIGHTNING, RarityType.RARE_HOLO, true));
         JUNGLE_CARDS.add(new PokemonCard("Flareon", CardType.FIRE, RarityType.RARE_HOLO, true));
-        JUNGLE_CARDS.add(new PokemonCard("Jolteon", CardType.LIGHTNING, RarityType.RARE_HOLO, true));
+        JUNGLE_CARDS.add(new PokemonCard("Kangaskhan", CardType.NORMAL, RarityType.RARE_HOLO, true));
+        JUNGLE_CARDS.add(new PokemonCard("Mr. Mime", CardType.PSYCHIC, RarityType.RARE_HOLO, true));
 
         JUNGLE_CARDS.add(new PokemonCard("Snorlax", CardType.NORMAL, RarityType.RARE_HOLO, true));
     }
