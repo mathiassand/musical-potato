@@ -75,6 +75,17 @@ public class PokemonPackSimModel {
         return new ArrayList<>(binder);
     }
 
+    public void clearBinder() {
+        binder.clear();
+        notifyListeners();
+    }
+
+    public void setBinderCars(List<PokemonCard> binderCards) {
+        this.binder.clear();
+        this.binder.addAll(binderCards);
+        notifyListeners();
+    }
+
     public void addListener(Runnable listener) {
         listeners.add(listener);
     }

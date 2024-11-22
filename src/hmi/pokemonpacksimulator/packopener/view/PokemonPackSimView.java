@@ -12,8 +12,7 @@ import java.awt.*;
 public class PokemonPackSimView extends TransparentPanel {
     public static final Dimension PREFERRED_SIZE = new Dimension(400, 0);
     public static final Border EMPTY_BORDER = BorderFactory.createEmptyBorder(10, 10, 10, 10);
-    public final JButton openBaseSetPackButton;
-    public final JButton openJunglePackButton;
+    public final JButton openBaseSetPackButton, openJunglePackButton, clearButton;
     public final BinderTableModel binderTableModel;
     public final JPanel detailsPanel, placeholderPanel;
     public final JLabel cardLabel, nameLabel, typeLabel, rarityLabel, holographicLabel, imageLabel;
@@ -24,14 +23,18 @@ public class PokemonPackSimView extends TransparentPanel {
     public PokemonPackSimView() {
         setLayout(new BorderLayout());
 
-        TransparentPanel openBackPanel = new TransparentPanel(new GridLayout(2, 1));
+        TransparentPanel buttonPanel = new TransparentPanel(new GridLayout(2, 1));
         openBaseSetPackButton = new JButton("Open base set pack");
         openBaseSetPackButton.setPreferredSize(new Dimension(100, 30));
-        openBackPanel.add(openBaseSetPackButton);
+        buttonPanel.add(openBaseSetPackButton);
         openJunglePackButton = new JButton("Open jungle pack");
         openJunglePackButton.setPreferredSize(new Dimension(100, 30));
-        openBackPanel.add(openJunglePackButton);
-        add(openBackPanel, BorderLayout.SOUTH);
+        buttonPanel.add(openJunglePackButton);
+        clearButton = new JButton("Clear binder");
+        clearButton.setPreferredSize(new Dimension(100, 30));
+        buttonPanel.add(clearButton);
+        add(buttonPanel, BorderLayout.SOUTH);
+
 
         binderTableModel = new BinderTableModel();
         binderTable = new JTable(binderTableModel);

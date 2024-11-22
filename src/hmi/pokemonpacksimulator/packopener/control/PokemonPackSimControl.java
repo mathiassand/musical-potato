@@ -17,6 +17,7 @@ public class PokemonPackSimControl {
 
         view.openJunglePackButton.addActionListener(e -> handleJungleOpening());
         view.openBaseSetPackButton.addActionListener(e -> handleBaseSetOpening());
+        view.clearButton.addActionListener(e -> model.clearBinder()); // todo swingworker thread
         model.addListener(() -> view.binderTableModel.setPokemonCards(model.getBinderCards()));
 
         view.binderTable.getSelectionModel().addListSelectionListener(e -> {
